@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const Table = styled.table`
     border: 1px solid #ddd;
@@ -19,34 +21,35 @@ class ManagerList extends Component {
         super(props);
 
         this.state = {
-            employees: [
-                {
-                    id: 1,
-                    name: 'emp 1',
-                },
-                {
-                    id: 1,
-                    name: 'emp 2',
-                },
-            ]
+
         }
     }
 
-
+    onClickMng = (id) => {
+        this.props.history.push('/manager-list-employee/' + id);
+    }
 
     render() {
         return (
             <DivTable>
                 <Table>
+                    <tbody>
                     <tr>
-                        <td>ID</td>
-                        <td>Name</td>
+                        <td>id</td>
+                        <td>Manager name</td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Manager 1</td>
-                        <td><button>Select</button></td>
-                    </tr>
+                    {
+                        this.props.managers !== undefined &&
+                        this.props.managers.length > 0 &&
+                        this.props.managers.map((mng , index) => {
+                            return <tr key={index}>
+                                <td>{mng.id}</td>
+                                <td>{mng.name}</td>
+                                <td><button onClick={() => this.onClickMng(mng.id)}>Select</button></td>
+                            </tr>
+                        })
+                    }
+                    </tbody>
                 </Table>
             </DivTable>
         );
@@ -55,4 +58,14 @@ class ManagerList extends Component {
 
 ManagerList.defaultProps = {};
 
-export default ManagerList;
+function mapStateToProps(state) {
+    return {
+
+    }
+}
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ManagerList));

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Container, Row } from "../style-js/Grid.style";
 import Header from "../components/Header";
 import styled from "styled-components";
-import ManagerList from "../components/ManagerList";
 import PropTypes from 'prop-types'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getManagers } from "../action/actionCreators";
+import { getEmployeeByManager } from "../action/actionCreators";
+import EmployeeListByManager from "../components/EmployeeListByManager";
 
 const DivMngList = styled.div`
     display: flex;
@@ -16,7 +16,7 @@ const DivMngList = styled.div`
     margin-top: 10px;
 `;
 
-class Manager extends Component {
+class ManagerListEmployee extends Component {
     constructor(props){
         super(props);
 
@@ -26,11 +26,11 @@ class Manager extends Component {
     }
 
     componentDidMount() {
-        this.props.getManagers();
+        this.props.getEmployeeByManager(this.props.match.params.id);
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.managers !== prevState.managers) {
+        if (nextProps.employee_by_manager !== prevState.employee_by_manager) {
             return {
                 showLoading: false,
             };
@@ -47,7 +47,7 @@ class Manager extends Component {
                 <Header {...this.props}/>
                 <Row>
                     <DivMngList>
-                        <ManagerList managers={this.props.managers.manager}/>
+                        <EmployeeListByManager employees={this.props.employee_by_manager.employees}/>
                     </DivMngList>
 
                 </Row>
@@ -56,20 +56,20 @@ class Manager extends Component {
     }
 }
 
-Manager.defaultProps = {};
+ManagerListEmployee.defaultProps = {};
 
-Manager.propTypes = {
-    getManagers: PropTypes.func.isRequired
+ManagerListEmployee.propTypes = {
+    getEmployeeByManager: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
     return {
-        managers: state.managers
+        employee_by_manager: state.employee_by_manager
     }
 }
 
 const mapDispatchToProps = {
-    getManagers: getManagers
+    getEmployeeByManager: getEmployeeByManager
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Manager));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ManagerListEmployee));

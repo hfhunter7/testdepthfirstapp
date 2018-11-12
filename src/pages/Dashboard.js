@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Header from '../components/Header';
 import { Container, Row } from '../style-js/Grid.style'
-import ManagerList from "../components/ManagerList";
 import styled from 'styled-components'
 import EmployeeList from "../components/EmployeeList";
 import { getEmployees } from "../action/actionCreators";

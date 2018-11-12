@@ -1,12 +1,9 @@
 import { apiUrl } from '../../helpers/urlHelper'
-import { current_user_storage } from "../../helpers/sessionHelper";
-import { createJwtFromToken } from "../../helpers/tokenHelper";
 
 const defaultUrl = apiUrl[ process.env.NODE_ENV ]
 
 export function fetch_employees(dispatch, update_employees) {
-    const user_storage = current_user_storage();
-    const auth_token = user_storage.auth_token;
+
     fetch(defaultUrl + `/employee/`,
         {
             headers: {

@@ -15,7 +15,7 @@ const DivTable = styled.div`
     align-items: center;
 `;
 
-class EmployeeList extends Component {
+class EmployeeListByManager extends Component {
 
     constructor(props){
         super(props);
@@ -26,7 +26,7 @@ class EmployeeList extends Component {
     }
 
     onClickEmp = (id) => {
-        this.props.history.push('/petty-cash/' + id)
+        this.props.history.push('/petty-cash-employee/' + id)
     }
 
     render() {
@@ -64,7 +64,6 @@ class EmployeeList extends Component {
                     }
                     </tbody>
 
-
                 </Table>
 
 
@@ -73,7 +72,7 @@ class EmployeeList extends Component {
     }
 }
 
-EmployeeList.defaultProps = {
+EmployeeListByManager.defaultProps = {
 
 };
 
@@ -87,4 +86,4 @@ const mapDispatchToProps = {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeList));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeListByManager));

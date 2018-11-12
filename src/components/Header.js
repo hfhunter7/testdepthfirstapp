@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { T } from '../helpers/localizeHelper';
 import {
     HeaderContainer,
     HeaderRow,
@@ -11,7 +9,7 @@ import {
 
 class Header extends Component {
     constructor( props ) {
-        super(props)
+        super(props);
         this.state = {
 
         }
@@ -28,12 +26,6 @@ class Header extends Component {
     };
 
     render() {
-        // if(this.state.showLoading){
-        //     return <Loading/>
-        // }
-
-        const props = this.props;
-        // console.log(Object.keys(this.props.user).length)
         return (
             <HeaderContainer>
                 <HeaderRow shadowColor={this.props.shadowColor}>

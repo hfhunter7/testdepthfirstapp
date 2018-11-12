@@ -8,8 +8,11 @@ import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const defaultState = {
-	errors: [],
-	petty_cash: {}
+	petty_cash: [],
+	managers:[],
+	employees:[],
+    employee_by_manager: [],
+    petty_cash_employee: [],
 };
 
 const store = createStore(rootReducer, defaultState, composeWithDevTools(applyMiddleware(thunk)));

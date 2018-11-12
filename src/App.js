@@ -11,6 +11,9 @@ import {
 import Dashboard from './pages/Dashboard';
 import Manager from "./pages/Manager";
 import PettyCash from "./pages/PettyCash";
+import ManagerListEmployee from "./pages/ManagerListEmployee";
+import PageNotFound from "./pages/PageNotFound";
+import EmployeeListPettyCash from "./pages/EmployeeListPettyCash";
 
 function handleUpdate() {
     let {
@@ -32,6 +35,9 @@ class App extends Component {
                             <Route exact path="/" component={Dashboard} />
                             <Route exact path="/manager" component={Manager} />
                             <Route exact path="/petty-cash/:id" component={PettyCash} />
+                            <Route exact path="/manager-list-employee/:id" component={ManagerListEmployee} />
+                            <Route exact path="/petty-cash-employee/:id" component={EmployeeListPettyCash} />
+                            <Route component={PageNotFound}/>
                         </Switch>
                     </div>
                 </Router>
