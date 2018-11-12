@@ -1,0 +1,66 @@
+.doing-exam-button-action-box {
+  padding 0
+  .action-question-details-box {
+    padding 20px 20px 10px 20px
+    background-color white-bg-color
+    margin-bottom 0
+  }
+  .toggle-action-button-box {
+    padding 10px 20px
+    margin-bottom 0
+    background-color light-grey-bg-color
+  }
+  .action-button-box {
+    padding 20px
+    background-color grey-hover-color
+    button {
+      background-color white-bg-color
+    }
+    #mock-submit-question-bottom-button {
+      margin-left 10px
+      background-color rgb(0,188,212)
+    }
+  }
+}
+
+.exam-passage-content-container {
+  background-color white-grey-light-bg
+}
+
+#question-article-box {
+  background-color transparent
+  &.grey-container-bg {
+    background-color light-grey-bg-color
+  }
+}
+
+.mock-test-details-information-box .button-box {
+  margin-top 40px
+}
+
+.doing-exam-button-action-box.exam-answer-hide-answer .action-question-details-box {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .doing-exam-button-action-box {
+    .action-button-box {
+      padding 10px
+    }
+    .toggle-action-button-box {
+      padding-left 10px
+      padding-right 10px
+      border-top 1px solid grey-border-color
+    }
+  }
+  #choose-exam-type-dialog {
+    .mdl-dialog__content {
+      padding-left 0
+      padding-right 0
+      .signup-submit-button-box {
+        width 100%
+      }
+    }
+  }
+}

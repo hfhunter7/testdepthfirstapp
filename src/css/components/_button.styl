@@ -1,0 +1,55 @@
+.btn {
+  &[disabled] {
+    cursor default // [1]
+  }
+  display inline-block // [2]
+  text-align center    // [2]
+  text-decoration none // [2]
+  font-family Roboto, sans-serif
+  outline none
+  border 0
+  padding 6px 16px 5px 16px
+  overflow hidden
+  transform translate(0, 0)
+  background transparent
+  height 36px
+  font-weight 400
+  min-width 88px
+  border-radius 2px
+  font-size 14px
+  text-transform uppercase
+
+  &:hover {
+    opacity 0.8
+  }
+}
+
+.btn--icon {
+  border-radius: 40px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.gg-signin {
+  background-color #4285F4
+  color #ffffff
+  padding 1px 16px 1px 1px
+  display flex
+  height 44px
+  width 320px
+  .img-box {
+    background-color #ffffff
+    height 42px
+    width 42px
+    border-radius 1px
+  }
+  img {
+    height 25px
+    padding-top 8px
+  }
+  p {
+    padding-top 13px
+    padding-left 66px
+  }
+}

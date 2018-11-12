@@ -1,0 +1,443 @@
+.icon-review-status {
+  font-size: 16px;
+  padding-top: 2px;
+  color: green;
+}
+  .text-status-review {
+    position: relative;
+    bottom: 2px;
+    font-size: 13px;
+  }
+
+.button-status-review{
+  min-width: 170px;
+}
+#circle {
+  width: 10px;
+  height: 10px;
+  background: green;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.review-filters-menu-container ,
+.review-results-box-container ,
+.review-results-box-passage-container {
+  border 2px solid grey-bg-color
+  margin-bottom 15px
+}
+
+.review-filters-menu-container {
+  background-color light-grey-bg
+  padding-left 5px
+  padding-right 5px
+  margin-bottom 0
+  > .mdl-grid {
+    padding-top 0
+  }
+}
+
+.review-results-box-container {
+  padding 15px 15px 15px 45px
+  height 17px
+  overflow hidden
+  &.active {
+    height auto
+  }
+  .exam-answer-explain-details-box {
+    border 2px solid grey-bg-color
+    padding 10px
+  }
+  .exam-answer-list-box {
+    margin-bottom 10px
+  }
+  .matrix-container {
+    margin-left -20px
+  }
+}
+
+.review-results-box-passage-container {
+  //padding 15px
+  //height 98px
+  overflow hidden
+  .exam-image-box {
+    height 400px
+    overflow hidden
+  }
+  .zoom-images-icon-box {
+    display none
+  }
+  .exam-article-question-paragraph-box {
+    height 250px
+  }
+  &.active {
+    //height auto
+    .exam-article-question-paragraph-box {
+      height auto
+    }
+    .zoom-images-icon-box {
+      display block
+    }
+  }
+  .exam-image-box {
+    height auto
+    img {
+      width 300px
+    }
+    &.zoom {
+      img {
+        width auto
+      }
+    }
+  }
+  > span {
+    line-height 1.5
+  }
+  .exam-passage-box ,
+  .exam-image-box {
+    padding 15px
+    background-color light-grey-bg
+  }
+  .exam-image-box {
+    padding-right 15px
+  }
+  .review-results-box-passage-result-box {
+    padding 15px 15px 0 15px
+  }
+  .exam-media-box {
+    padding-right 45px
+    padding-top 25px
+    padding-left 5px
+    padding-bottom 25px
+    background-color light-grey-bg
+  }
+  .zoom-images-icon-box {
+    width 20px
+    height 20px
+    position absolute
+    padding 10px
+    top 5px
+    right 45px
+    cursor pointer
+    color white-bg-color
+    background-color rgba(0,0,0,0.3)
+  }
+}
+
+.review-filters-menu-box {
+  padding 5px
+  h3 {
+    font-size 18px
+  }
+  label {
+    margin-top 5px
+    font-size 16px
+  }
+}
+
+.review-result-question-line {
+  padding-right 25px
+  .inline {
+    //display: flex
+  }
+}
+
+.is-correct-answer-symbol {
+  position absolute
+  top 13px
+  left 15px
+  color dark-green-color
+  &.wrong-answer-symbol {
+    color red-wrong-text
+  }
+}
+
+.empty-review-box {
+  padding-top 60px
+  padding-bottom 90px
+  h3 {
+    font-size 24px
+    margin-top 60px
+    margin-bottom 15px
+  }
+  p {
+    color grey-label-color
+  }
+  .img {
+    max-width 100% !important
+  }
+}
+
+.review-filter-sidebar-container {
+  display none
+  .review-filters-menu-box {
+    margin-bottom 15px
+  }
+}
+.review-content-info-box {
+  padding 0 !important
+}
+
+.review-list-table-box {
+  padding-bottom 30px
+  > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width 100%
+    border none
+    td,
+    th {
+      border-bottom: 1px solid rgba(0,0,0,.12);
+      padding: 6px 10px;
+      &:first-child ,
+      &:last-child {
+        padding-left 15px
+        padding-right 15px
+      }
+    }
+    th {
+      font-size 16px
+      color black-text-color
+      min-width 110px
+      padding-top 18px
+      padding-bottom 18px
+    }
+    td {
+      cursor pointer
+    }
+    tbody {
+      tr {
+        &:hover {
+          background-color: grey-hover-color;
+        }
+      }
+    }
+  }
+}
+
+.review-list-table-image-cover {
+  padding-right 0px !important
+  img {
+    width 100px !important
+    margin-right 10px !important
+  }
+}
+  .review-list-title {
+    padding-left 0px !important
+  }
+
+.review-list-table-exam-name {
+  p {
+    font-size 13px
+  }
+  .review-list-table-finished-sign {
+    font-size 14px
+    color grey-para-color
+    display block
+    .material-icons {
+      float left
+      margin-right 5px
+      color dark-green-color
+      font-size 18px
+    }
+    .capital-text {
+      float left
+    }
+  }
+}
+
+.review-filters-apply-button-box {
+  padding-left 15px
+  padding-bottom 10px
+}
+
+.review-question-list-table-head-mobile {
+  display none
+}
+
+.text-answer-explain-list-box {
+  > p {
+    margin-bottom 20px
+  }
+  .user-avatar {
+    width 35px
+    position absolute
+    top 43px
+    left 0
+  }
+}
+
+.text-answer-explain-list-element {
+  padding-left 45px
+  margin-bottom 20px
+  h3 {
+    font-size 16px
+    margin-bottom 10px
+  }
+  span {
+    margin-bottom 10px
+    display block
+  }
+  .mdl-button {
+    margin-left -15px
+  }
+}
+
+.exam-answer-box {
+  .comment-element-container {
+    margin-left -20px
+  }
+}
+
+.comment-element-container {
+  .panel-heading {
+    padding-left 20px
+    padding-top 13px
+    padding-bottom 13px
+    color white-bg-color
+    text-transform uppercase
+    letter-spacing 0.5px
+    .avatar {
+      margin-right 5px
+      max-width 40px
+    }
+  }
+  .panel-collapse {
+    padding-left 20px
+    h3,
+    p,
+    h4 {
+      font-size 16px
+    }
+    h3 {
+      margin-bottom 15px
+    }
+    .content-box {
+      margin-bottom 30px
+    }
+  }
+}
+
+.comment-input-container {
+  padding-top 5px
+  padding-left 40px
+  .avatar {
+    position absolute
+    width 35px
+    top 0
+    left -40px
+  }
+  .comment {
+    .starbox {
+      .star {
+        width 20px
+        padding-right 5px
+      }
+      .score-box {
+        margin-left 15px
+        font-size 18px
+      }
+      .star, .score-box {
+        float left
+      }
+    }
+    .input-box {
+      .mdl-textfield {
+        width 100%
+      }
+    }
+    .counter-box {
+      margin-top -10px
+      p {
+        font-size 12px
+      }
+    }
+    .button-box {
+      margin-top 25px
+    }
+  }
+}
+
+.review-results-box-with-sound {
+  border 2px solid grey-bg-color
+  padding 15px
+  margin-bottom 15px
+}
+
+@media (max-width: 991px) {
+  .review-list-table-exam-name {
+    p {
+      font-size 14px
+      font-weight 700
+    }
+  }
+  .review-list-table-box {
+    overflow auto
+  }
+  .review-list-table-box > table td:first-child, .review-list-table-box > table th:first-child, .review-list-table-box > table td:last-child, .review-list-table-box > table th:last-child {
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  .review-list-table-image-cover {
+    min-width 90px
+  }
+  .review-list-table-exam-name {
+    min-width 150px
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .review-content-info-box {
+    .review-filters-menu-container {
+      //display: none
+    }
+  }
+  .review-content-filter-button-menu {
+    //display none
+  }
+  .review-filter-sidebar-container {
+    display block
+  }
+}
+
+@media (max-width: 767px) {
+  .review-results-box-passage-container {
+    .exam-article-question-image-box {
+      > p {
+        padding-bottom 0
+      }
+    }
+  }
+  .review-box {
+    > .mdl-grid {
+      padding 0
+      > .mdl-cell {
+        width 100% !important
+        margin-left 0
+        margin-right 0
+        margin-top 0
+      }
+    }
+    .exam-article-question-paragraph-box {
+      padding-left 0
+      padding-right 0
+    }
+  }
+  .review-list-table-image-cover {
+    display none
+  }
+  .review-question-list-table-head-mobile {
+    display table-cell
+  }
+  .review-question-list-table-head-desktop {
+    display none
+  }
+  .review-list-table-box > table th {
+    min-width 0
+  }
+  .profile-image {
+
+  }
+}

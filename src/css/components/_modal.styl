@@ -1,0 +1,40 @@
+dialog {
+  z-index 100002
+}
+.signup-dialog {
+  width 360px
+  .signup-form-control {
+    width 100%
+  }
+}
+
+.close-modal-icon-box {
+  cursor pointer
+  padding 10px
+  position absolute
+  top 5px
+  right 5px
+  color grey-para-color
+}
+
+
+body {
+  > ._dialog_overlay {
+    display none
+  }
+}
+
+.signup-dialog {
+  hr.separate {
+    margin-top 0
+    margin-bottom 0
+  }
+}
+
+@media (max-width: 767px) {
+  .signup-dialog {
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+}

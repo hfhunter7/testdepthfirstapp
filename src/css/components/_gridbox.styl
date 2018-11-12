@@ -1,0 +1,63 @@
+.grid-box-container {
+  .grid-content {
+    position relative
+    background-color #fff
+    //transition box-shadow .25s
+    border-radius 2px
+    z-index 1
+    float left
+    width 100%
+    height: 273px;
+
+    .image-grid-box {
+      /* zoom */
+      position: relative;
+      overflow: hidden;
+      height 150px
+      max-height 150px
+    }
+
+    .detail-grid-box {
+      //padding 10px 10px 0 10px
+      padding 10px 10px 10px 10px
+      color #000
+      height: 5em;
+      white-space: wrap;
+      text-overflow: ellipsis;
+      text-align: left;
+      .title {
+        height 24px
+        width: 100%;
+        font-size: 1em;
+        line-height: 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .trainer-name {
+        font-size: 12px;
+        height: 20px;
+        width: 160px;
+        color: #cccccc;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+
+      .lesson {
+        font-size 12px
+        height 17px
+        margin-top 5px
+        margin-bottom 5px
+      }
+
+      .price {
+        color #0088FF
+        height 25px
+        margin-top 10px
+        font-size 14px
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@-webkit-keyframes fadeinout {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+}
+@keyframes fadeinout {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+}
+
+.list-box-container {
+  width 100%
+  display inline-block
+  margin 8px
+  box-sizing border-box
+  cursor pointer
+  &:hover {
+    background-color #fafafa
+  }
+
+  -webkit-animation: fadeinout 4s linear 1 forwards;
+  animation: fadeinout 4s linear 1 forwards;
+
+
+  .list-content {
+    position relative
+    border-radius 2px
+    z-index 1
+    float left
+    width 100%
+    display inline-flex
+
+    @media (max-width: 767px) {
+
+      .image-list-box {
+        width calc(40% - 16px) !important
+        height 120px !important
+        max-height 120px !important
+      }
+      .detail-list-box {
+        width calc(60% - 16px) !important
+        padding 5px 10px !important
+      }
+    }
+
+    @media (max-width: 1240px) {
+
+      .image-list-box {
+        width calc(40% - 16px) !important
+        height 120px !important
+        max-height 120px !important
+      }
+      .detail-list-box {
+        width calc(60% - 16px) !important
+        padding 5px 10px !important
+
+      }
+    }
+
+    .image-list-box {
+      /* zoom */
+      position relative
+      overflow hidden
+
+      width calc(30% - 16px)
+      height 150px
+      max-height 150px
+    }
+
+    .detail-list-box {
+      width calc(70% - 16px)
+      padding 10px
+
+      .title {
+        height 24px
+        white-space nowrap
+        overflow hidden !important
+        text-overflow ellipsis
+
+
+      }
+
+      .trainer-name {
+        color #ccc
+        font-size 12px
+        height 15px
+      }
+
+      .lesson {
+        font-size 12px
+        height 17px
+        margin-top 5px
+      }
+
+      .price {
+        color #0088FF
+        height 25px
+        margin-top 10px
+      }
+    }
+  }
+
+
+}
