@@ -7,6 +7,7 @@ import { Container, Row } from '../style-js/Grid.style'
 import styled from 'styled-components'
 import EmployeeList from "../components/EmployeeList";
 import { getGeneralEmployees } from "../action/actionCreators";
+import { HeaderText } from "../style-js/shared.style";
 
 const DivEmpList = styled.div`
     display: flex;
@@ -49,6 +50,7 @@ class Dashboard extends Component {
                 <Row>
 
                     <DivEmpList>
+                        <HeaderText>รายชื่อพนักงาน</HeaderText>
                         <EmployeeList employees={this.props.general_employee.general_employees}/>
                     </DivEmpList>
 
