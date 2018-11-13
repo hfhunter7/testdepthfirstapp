@@ -13,6 +13,11 @@ const defaultState = {
 	employees:[],
     employee_by_manager: [],
     petty_cash_employee: [],
+    finance_employee:[],
+    general_employee:[],
+    petty_cash_approve: [
+
+	],
 };
 
 const store = createStore(rootReducer, defaultState, composeWithDevTools(applyMiddleware(thunk)));

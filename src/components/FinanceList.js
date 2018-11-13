@@ -15,7 +15,7 @@ const DivTable = styled.div`
     align-items: center;
 `;
 
-class EmployeeList extends Component {
+class FinanceList extends Component {
 
     constructor(props){
         super(props);
@@ -26,11 +26,11 @@ class EmployeeList extends Component {
     }
 
     onClickEmp = (id) => {
-        this.props.history.push('/petty-cash/' + id)
+        this.props.history.push('/finance-list-patty-cash/' + id)
     }
 
-    onClickCheckStatus = (id) => {
-        this.props.history.push('/employee-status-petty-cash/' + id)
+    onClickSummary = (id) => {
+        this.props.history.push('/finance-list-detail/' + id)
     }
 
     render() {
@@ -62,8 +62,8 @@ class EmployeeList extends Component {
                                 <td>{emp.status}</td>
                                 <td>{emp.department_title}</td>
                                 <td>{emp.job_level}</td>
-                                <td><button onClick={() => this.onClickEmp(emp.id)}>เบิกเงิน</button></td>
-                                <td><button onClick={() => this.onClickCheckStatus(emp.id)}>เช็คสถานะการเบิก</button></td>
+                                <td><button onClick={() => this.onClickEmp(emp.id)}>รายการเบิก</button></td>
+                                <td><button onClick={() => this.onClickSummary(emp.id)}>สรุปยอด</button></td>
                             </tr>
                         })
                     }
@@ -78,7 +78,7 @@ class EmployeeList extends Component {
     }
 }
 
-EmployeeList.defaultProps = {
+FinanceList.defaultProps = {
 
 };
 
@@ -92,4 +92,4 @@ const mapDispatchToProps = {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeList));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(FinanceList));

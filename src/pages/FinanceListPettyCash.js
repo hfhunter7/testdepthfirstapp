@@ -5,8 +5,9 @@ import styled from "styled-components";
 import PropTypes from 'prop-types'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getPettyCashByEmployee, updateStatusPettyCash } from "../action/actionCreators";
-import PettyCashList from "../components/PettyCashList";
+import { getPettyCashByApprove, updateStatusPettyCash } from "../action/actionCreators";
+import PettyCashApproveList from "../components/PettyCashApproveList";
+import { HeaderText } from "../style-js/shared.style";
 
 const DivMngList = styled.div`
     display: flex;
@@ -16,7 +17,7 @@ const DivMngList = styled.div`
     margin-top: 10px;
 `;
 
-class EmployeeListPettyCash extends Component {
+class FinanceListPettyCash extends Component {
     constructor(props){
         super(props);
 
@@ -26,11 +27,11 @@ class EmployeeListPettyCash extends Component {
     }
 
     componentDidMount() {
-        this.props.getPettyCashByEmployee(this.props.match.params.id);
+        this.props.getPettyCashByApprove();
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.petty_cash_employee !== prevState.petty_cash_employee) {
+        if (nextProps.petty_cash_approve !== prevState.petty_cash_approve) {
             return {
                 showLoading: false,
             };
@@ -55,9 +56,10 @@ class EmployeeListPettyCash extends Component {
                 <Header {...this.props}/>
                 <Row>
                     <DivMngList>
-                        <PettyCashList
-                            status="manager"
-                            petty_cash={this.props.petty_cash_employee.petty_cash}
+                        <HeaderText>รายการเบิกที่อนุมัติแล้ว</HeaderText>
+                        <PettyCashApproveList
+                            status="list"
+                            petty_cash_approve={this.props.petty_cash_approve.petty_cash_approve}
                             handleUpdateStatus={this.handleUpdateStatus}
                         />
                     </DivMngList>
@@ -68,21 +70,22 @@ class EmployeeListPettyCash extends Component {
     }
 }
 
-EmployeeListPettyCash.defaultProps = {};
+FinanceListPettyCash.defaultProps = {};
 
-EmployeeListPettyCash.propTypes = {
-    getPettyCashByEmployee: PropTypes.func.isRequired
+FinanceListPettyCash.propTypes = {
+    getPettyCashByApprove: PropTypes.func.isRequired,
+    updateStatusPettyCash: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
     return {
-        petty_cash_employee: state.petty_cash_employee
+        petty_cash_approve: state.petty_cash_approve,
     }
 }
 
 const mapDispatchToProps = {
-    getPettyCashByEmployee: getPettyCashByEmployee,
-    updateStatusPettyCash: updateStatusPettyCash,
+    getPettyCashByApprove: getPettyCashByApprove,
+    updateStatusPettyCash:updateStatusPettyCash
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeListPettyCash));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(FinanceListPettyCash));

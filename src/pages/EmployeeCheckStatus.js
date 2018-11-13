@@ -16,7 +16,7 @@ const DivMngList = styled.div`
     margin-top: 10px;
 `;
 
-class EmployeeListPettyCash extends Component {
+class EmployeeCheckStatus extends Component {
     constructor(props){
         super(props);
 
@@ -56,7 +56,7 @@ class EmployeeListPettyCash extends Component {
                 <Row>
                     <DivMngList>
                         <PettyCashList
-                            status="manager"
+                            status="employee"
                             petty_cash={this.props.petty_cash_employee.petty_cash}
                             handleUpdateStatus={this.handleUpdateStatus}
                         />
@@ -68,10 +68,11 @@ class EmployeeListPettyCash extends Component {
     }
 }
 
-EmployeeListPettyCash.defaultProps = {};
+EmployeeCheckStatus.defaultProps = {};
 
-EmployeeListPettyCash.propTypes = {
-    getPettyCashByEmployee: PropTypes.func.isRequired
+EmployeeCheckStatus.propTypes = {
+    getPettyCashByEmployee: PropTypes.func.isRequired,
+    updateStatusPettyCash: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -82,7 +83,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
     getPettyCashByEmployee: getPettyCashByEmployee,
-    updateStatusPettyCash: updateStatusPettyCash,
+    updateStatusPettyCash: updateStatusPettyCash
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeListPettyCash));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeCheckStatus));

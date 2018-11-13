@@ -39,6 +39,10 @@ class PettyCashList extends Component {
     render() {
         return (
             <DivTable>
+                {
+                    this.props.petty_cash !== undefined && this.props.status === 'manager' &&
+                        this.props.petty_cash.length === 0 &&  <h4>ไม่มีรายการเบิก</h4>
+                }
                 <Table>
                     <tbody>
                     <tr>
@@ -51,7 +55,7 @@ class PettyCashList extends Component {
                         <td>status</td>
                     </tr>
                     {
-                        this.props.petty_cash !== undefined &&
+                        this.props.petty_cash !== undefined && this.props.status === 'manager' ?
                         this.props.petty_cash.length > 0 &&
                         this.props.petty_cash.map((pc , index) => {
                             return <tr key={index}>
@@ -62,10 +66,34 @@ class PettyCashList extends Component {
                                 <td>{pc.create_date}</td>
                                 <td>{pc.modify_date}</td>
                                 <td>{pc.status}</td>
-                                <td><button onClick={this.onClickUpdate(pc.id)} data-status_id={2}>อนุมัติ</button></td>
-                                <td><button onClick={this.onClickUpdate(pc.id)} data-status_id={3}>ไม่อนุมัติ</button></td>
+                                {
+                                    pc.status !== 'รับเงิน' && pc.status !== 'รับเงินแล้ว'&& pc.status !== 'สำเร็จแล้ว' && <td><button onClick={this.onClickUpdate(pc.id)} data-status_id={2}>อนุมัติ</button></td>
+                                }
+                                {
+                                    pc.status !== 'รับเงิน' && pc.status !== 'รับเงินแล้ว'&& pc.status !== 'สำเร็จแล้ว' && <td><button onClick={this.onClickUpdate(pc.id)} data-status_id={3}>ไม่อนุมัติ</button></td>
+                                }
                             </tr>
                         })
+                            :
+                            this.props.petty_cash !== undefined &&
+                            this.props.petty_cash.length > 0 &&
+                            this.props.petty_cash.map((pc , index) => {
+                                return <tr key={index}>
+                                    <td>{pc.id}</td>
+                                    <td>{pc.code}</td>
+                                    <td>{pc.description}</td>
+                                    <td>{pc.amount}</td>
+                                    <td>{pc.create_date}</td>
+                                    <td>{pc.modify_date}</td>
+                                    <td>{pc.status}</td>
+                                    {
+                                        pc.status === 'รับเงิน' && <td>
+                                            <button onClick={this.onClickUpdate(pc.id)} data-status_id={7}>รับเงิน</button>
+                                        </td>
+                                    }
+                                </tr>
+                            })
+
                     }
                     </tbody>
                 </Table>

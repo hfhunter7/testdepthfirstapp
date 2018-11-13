@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import { Container, Row } from '../style-js/Grid.style'
 import styled from 'styled-components'
 import EmployeeList from "../components/EmployeeList";
-import { getEmployees } from "../action/actionCreators";
+import { getGeneralEmployees } from "../action/actionCreators";
 
 const DivEmpList = styled.div`
     display: flex;
@@ -26,11 +26,11 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        this.props.getEmployees();
+        this.props.getGeneralEmployees();
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.employees !== prevState.employees) {
+        if (nextProps.general_employee !== prevState.general_employee) {
             return {
                 showLoading: false,
             };
@@ -40,7 +40,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        console.log('emp',this.props.employees.all_employees)
+
         if(this.state.showLoading) return <h1>Loading...</h1>
 
         return (
@@ -49,7 +49,7 @@ class Dashboard extends Component {
                 <Row>
 
                     <DivEmpList>
-                        <EmployeeList employees={this.props.employees.all_employees}/>
+                        <EmployeeList employees={this.props.general_employee.general_employees}/>
                     </DivEmpList>
 
                 </Row>
@@ -63,17 +63,17 @@ Dashboard.defaultProps = {
 };
 
 Dashboard.propTypes = {
-    getEmployees: PropTypes.func.isRequired
+    getGeneralEmployees: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
     return {
-        employees: state.employees
+        general_employee: state.general_employee
     }
 }
 
 const mapDispatchToProps = {
-    getEmployees: getEmployees
+    getGeneralEmployees: getGeneralEmployees
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Dashboard));

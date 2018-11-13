@@ -38,7 +38,9 @@ class Header extends Component {
                         <button onClick={this.handleClick.bind(this, "/manager")}>
                             manager
                         </button>
-
+                        <button onClick={this.handleClick.bind(this, "/finance")}>
+                            finance
+                        </button>
                     </RightBox>
 
                 </HeaderRow>

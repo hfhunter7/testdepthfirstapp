@@ -18,7 +18,6 @@ export function fetch_managers(dispatch, update_managers) {
             return response.json()
         })
         .then(function ( json ) {
-            console.log(json)
             dispatch(update_managers(json));
         });
 }
@@ -39,7 +38,6 @@ export function fetch_employee_by_manager(id,dispatch, update_employee_by_manage
             return response.json()
         })
         .then(function ( json ) {
-            console.log(json)
             dispatch(update_employee_by_manager(json));
         });
 }

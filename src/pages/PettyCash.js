@@ -39,8 +39,9 @@ class PettyCash extends Component {
             description: this.state.description,
             employee_id: this.props.match.params.id,
         }
-        console.log('data',data)
         this.props.createPettyCash(data);
+
+        //this.props.history.push('/employee-status-petty-cash/'+this.props.match.params.id);
     }
 
     handleChange = (key) => {

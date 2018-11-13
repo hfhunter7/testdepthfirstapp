@@ -1,8 +1,8 @@
 export const apiUrl = {
-	development: "http://localhost:6565/v1",
-	production: "http://localhost:6565/v1",
-	//development: "https://apitestherostaging.testhero.in.th/trainingcenterbackend-1.0.0/v1",
-	//production: "https://apitestherostaging.testhero.in.th/trainingcenterbackend-1.0.0/v1",
+	// development: "http://localhost:6565/v1",
+	// production: "http://localhost:6565/v1",
+	development: "http://apitestherostaging.testhero.in.th:8080/testdepthfirstapp-1.0.0/v1",
+	production: "http://apitestherostaging.testhero.in.th:8080/testdepthfirstapp-1.0.0/v1",
 };
 
 export const socketUrl = {
