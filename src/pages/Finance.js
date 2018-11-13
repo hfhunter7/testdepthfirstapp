@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getFinanceEmployees } from "../action/actionCreators";
 import FinanceList from "../components/FinanceList";
+import { HeaderText } from "../style-js/shared.style";
 
 const DivMngList = styled.div`
     display: flex;
@@ -47,6 +48,7 @@ class Finance extends Component {
                 <Header {...this.props}/>
                 <Row>
                     <DivMngList>
+                        <HeaderText>ฝ่ายการเงิน</HeaderText>
                         <FinanceList employees={this.props.finance_employee.finance_employees}/>
                     </DivMngList>
 

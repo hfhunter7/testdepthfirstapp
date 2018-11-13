@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getPettyCashByEmployee, updateStatusPettyCash } from "../action/actionCreators";
 import PettyCashList from "../components/PettyCashList";
+import { HeaderText } from "../style-js/shared.style";
 
 const DivMngList = styled.div`
     display: flex;
@@ -55,6 +56,7 @@ class EmployeeListPettyCash extends Component {
                 <Header {...this.props}/>
                 <Row>
                     <DivMngList>
+                        <HeaderText>รายการเบิกของพนักงาน</HeaderText>
                         <PettyCashList
                             status="manager"
                             petty_cash={this.props.petty_cash_employee.petty_cash}

@@ -58,7 +58,7 @@ class EmployeeListByManager extends Component {
                                 <td>{emp.status}</td>
                                 <td>{emp.department_title}</td>
                                 <td>{emp.job_level}</td>
-                                <td><button onClick={() => this.onClickEmp(emp.id)}>Select</button></td>
+                                <td><button onClick={() => this.onClickEmp(emp.id)}>ดูรายละเอียด</button></td>
                             </tr>
                         })
                     }

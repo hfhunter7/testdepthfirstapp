@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getManagers } from "../action/actionCreators";
+import { HeaderText } from "../style-js/shared.style";
 
 const DivMngList = styled.div`
     display: flex;
@@ -47,6 +48,7 @@ class Manager extends Component {
                 <Header {...this.props}/>
                 <Row>
                     <DivMngList>
+                        <HeaderText>รายชื่อผู้จัดการ</HeaderText>
                         <ManagerList managers={this.props.managers.manager}/>
                     </DivMngList>
 

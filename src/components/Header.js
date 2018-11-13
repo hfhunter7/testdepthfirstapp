@@ -33,13 +33,13 @@ class Header extends Component {
 
                     <RightBox>
                         <button onClick={this.handleClick.bind(this, "/")}>
-                            employee
+                            พนักงาน
                         </button>
                         <button onClick={this.handleClick.bind(this, "/manager")}>
-                            manager
+                            ผู้จัดการ
                         </button>
                         <button onClick={this.handleClick.bind(this, "/finance")}>
-                            finance
+                            ฝ่ายการเงิน
                         </button>
                     </RightBox>
 

@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getEmployeeByManager } from "../action/actionCreators";
 import EmployeeListByManager from "../components/EmployeeListByManager";
+import { HeaderText } from "../style-js/shared.style";
 
 const DivMngList = styled.div`
     display: flex;
@@ -47,6 +48,7 @@ class ManagerListEmployee extends Component {
                 <Header {...this.props}/>
                 <Row>
                     <DivMngList>
+                        <HeaderText>รายชื่อพนักงานที่อยู่ใต้บังคับบัญชา</HeaderText>
                         <EmployeeListByManager employees={this.props.employee_by_manager.employees}/>
                     </DivMngList>
 
